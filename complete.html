@@ -3,6 +3,7 @@
         // console.log(window)
      if (window.parent) {
         // console.log(window.parent)
+        console.log(document.cookie);
         if (/thirdparty=yes/.test(document.cookie)) {
             window.parent.postMessage('MM:3PCsupported', '*');
         } else {
