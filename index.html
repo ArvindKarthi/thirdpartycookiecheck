@@ -9,14 +9,14 @@
 <body>
     Hi the site is up
     <script>
-//         window.addEventListener('message', event => {
-//             if (event) {
-//                 console.log(event.origin);
-//             } else {
-//                 return;
-//             }
-//         });
-console.log(document.cookie)
+        window.addEventListener('message', event => {
+            if (event) {
+                console.log(event.origin);
+            } else {
+                return;
+            }
+        });
+        // console.log(document.cookie)
         document.cookie="thirdparty=yes; Max-Age=3600; SameSite=None; Secure";
         document.location="complete.html";
     </script>
