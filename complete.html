@@ -1,13 +1,10 @@
 <body>
     <script>
-        console.log(window)
      if (window.parent) {
-        console.log(window.parent)
-        console.log(document.cookie);
         if (/thirdparty=yes/.test(document.cookie)) {
-            window.parent.postMessage('MM:3PCsupported', '*');
+            window.parent.postMessage('supported', '*');
         } else {
-            window.parent.postMessage('MM:3PCunsupported', '*');
+            window.parent.postMessage('unsupported', '*');
         }
         document.cookie = 'thirdparty=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
      }
