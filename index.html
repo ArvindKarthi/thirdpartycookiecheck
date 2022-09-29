@@ -9,19 +9,15 @@
 <body>
     Hi the site is up
     <script>
-        window.addEventListener('message', event => {
-    // IMPORTANT: check the origin of the data!
-    if (event) {
-        // The data was sent from your site.
-        // Data sent with postMessage is stored in event.data:
-        console.log(event.origin);
-    } else {
-        // The data was NOT sent from your site!
-        // Be careful! Do not use it. This else branch is
-        // here just for clarity, you usually shouldn't need it.
-        return;
-    }
-});
+//         window.addEventListener('message', event => {
+//             if (event) {
+//                 console.log(event.origin);
+//             } else {
+//                 return;
+//             }
+//         });
+        document.cookie="thirdparty=yes; Max-Age=3600; SameSite=None; Secure";
+        document.location="complete.html";
     </script>
 </body>
 </html>
