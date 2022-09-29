@@ -1,18 +1,12 @@
 <body>
     <script>
      if (window.parent) {
-        let cookieExist = document?.localStorage?.getItem("cookieExist");
-        if(cookieExist){
-            window.parent.postMessage(cookieExist, '*');
-        }else{
-            window.parent.postMessage("false", '*');
+        if (/thirdparty=yes/.test(document.cookie)) {
+            window.parent.postMessage('supported', '*');
+        } else {
+            window.parent.postMessage('unsupported', '*');
         }
-        // if (/thirdparty=yes/.test(document.cookie)) {
-        //     window.parent.postMessage('supported', '*');
-        // } else {
-        //     window.parent.postMessage('unsupported', '*');
-        // }
-        // document.cookie = 'thirdparty=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        document.cookie = 'thirdparty=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
      }
     </script>
     </body>
