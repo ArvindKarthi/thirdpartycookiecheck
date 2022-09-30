@@ -2,12 +2,11 @@
     <script>
      if (window.parent) {
         let userAgent = navigator.userAgent;
-        let browserName;
          
         if(userAgent.match(/safari/i)){
-             browserName = "safari";
+            window.parent.postMessage('supported', '*');
         }
-        if (/thirdparty=yes/.test(document.cookie)) {
+        else if(/thirdparty=yes/.test(document.cookie)) {
             window.parent.postMessage('supported', '*');
         } else {
             window.parent.postMessage('unsupported', '*');
