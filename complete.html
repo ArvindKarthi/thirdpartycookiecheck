@@ -2,6 +2,7 @@
     <script>
      if (window.parent) {
         let userAgent = navigator.userAgent;
+        console.log(userAgent);
          
         if(userAgent.match(/safari/i)){
             window.parent.postMessage('supported', '*');
