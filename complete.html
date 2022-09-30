@@ -2,9 +2,9 @@
     <script>
      if (window.parent) {
         let userAgent = navigator.userAgent;
-        console.log(userAgent);
+        console.log(userAgent, window.chrome);
          
-        if(userAgent.match(/safari/i)){
+        if(userAgent.match(/safari/i) && !window?.chrome){
             window.parent.postMessage('supported', '*');
         }
         else if(/thirdparty=yes/.test(document.cookie)) {
