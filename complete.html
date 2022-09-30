@@ -2,7 +2,6 @@
     <script>
      if (window.parent) {
         let userAgent = navigator.userAgent;
-        console.log(userAgent, window.chrome);
          
         if(userAgent.match(/safari/i) && !window?.chrome){
             window.parent.postMessage('supported', '*');
