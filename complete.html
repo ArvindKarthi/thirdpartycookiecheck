@@ -7,7 +7,7 @@
         if(userAgent.match(/safari/i)){
              browserName = "safari";
         }
-        if (/thirdparty=yes/.test(document.cookie) || browserName === 'safari') {
+        if (/thirdparty=yes/.test(document.cookie)) {
             window.parent.postMessage('supported', '*');
         } else {
             window.parent.postMessage('unsupported', '*');
